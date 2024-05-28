@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node-js
+  labels:
+    app: simple-node-js
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: simple-node-js
+  template:
+    metadata:
+      labels:
+        app: simple-node-js
+    spec:
+      containers:
+      - name: simple-node-js
+        image: amangoyal9643/simple-node-js-f
+        ports:
+        - containerPort: 8200

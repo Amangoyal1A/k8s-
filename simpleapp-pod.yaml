@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-node-js-pod
+  labels:
+    name: simple-node-js
+spec:
+  containers:
+  - name: simple-node-js
+    image: amangoyal9643/simple-node-js-f
+    ports:
+    - containerPort: 8200

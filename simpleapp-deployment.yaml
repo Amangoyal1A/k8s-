@@ -2,10 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-node-js
+  namespace: simple-node-js
   labels:
     app: simple-node-js
+    namespace: simple-node-js
+    version: v1
 spec:
-  replicas: 20
+  replicas: 1
   selector:
     matchLabels:
       app: simple-node-js

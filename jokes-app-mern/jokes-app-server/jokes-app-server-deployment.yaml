@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jokes-deployement
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      name: jokes-api
+  template:
+    metadata:
+      labels: 
+        name: jokes-api
+    spec:
+      containers:
+        - name: jokes-api-con
+          image: amangoyal9643/jokes-app-node-server
+          ports: 
+            - containerPort: 7000
+          envFrom:
+            - configMapRef:
+                name:  jokes-api-config 

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jokes-api-config
+data:
+  MONGO_URI: "mongodb://mongo-cluster-ip/jokesdb"
+  PORT: "7000" 
